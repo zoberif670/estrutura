@@ -1,0 +1,44 @@
+<center>
+    <head lang="pt-br">
+ 
+    <title>Página de atendentes</title>
+
+    <meta charset = "UTF-8">
+
+    <script type="text/javascript">
+
+        function linkProtetor(link)
+        {
+            var lnk = link;
+            lnk = lnk.substr(lnk.search("url=")+4);
+            return lnk;
+        }
+
+        var linkpro = window.parent.document.location.href;
+        linkpro = linkProtetor(linkpro);
+
+        var ss = -1;
+
+        function atualizaContador(futuro)
+        {
+         ss = (ss==-1) ? futuro : ss;
+         var faltam =  'Você será redirecionado para o WhatsApp em '+ss+' segundos.';
+
+             if (ss > 0)
+             {
+                document.getElementById('contador').innerHTML = faltam;
+                ss--;
+                setTimeout(atualizaContador,1000);
+             }
+             else
+             {
+                document.location.href = '/s-up1/index/index.html';
+             }
+        }
+    </script>
+</head>
+    <body onLoad="atualizaContador(0);">
+        <div id="contador">
+        </div>
+    </body>
+</center>

